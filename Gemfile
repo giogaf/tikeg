@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -32,7 +31,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do
+	#gema agregada para integration testing (click, visita paginas, llenar form)
+	gem "capybara", "~> 2.4"
+end
+
 group :development, :test do
+	# gema agregada para behavior-driven development BDD
+	gem "rspec-rails"	
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
