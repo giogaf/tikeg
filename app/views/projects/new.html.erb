@@ -1,0 +1,10 @@
+<h1>Nuevo proyecto</h1>
+
+
+<%= form_for @project do |f|%>
+	<%= f.label :nombre,'Nombre ticket' %>
+	<%= f.text_field :nombre %> <br>
+	<%= f.label :descripcion %>
+	<%= f.text_field :descripcion %> <br>
+	<%= f.submit 'Crear proyecto' %>
+<% end %>

@@ -3,3 +3,6 @@
 making Ticketee clone
 
 1. gem "rspec-rails", gem "capybara", "~> 2.4" , then rails g rspec:install
+2. new file  spec/features/creating_projects_spec.rb
+	  Edit: RSpec.feature "usuario crea nuevo proyecto" do ...
+3. console: rspec  # make test
