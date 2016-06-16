@@ -1,5 +1,10 @@
 <h1>Nuevo proyecto</h1>
-
+<% if @project.errors.any? %>
+	<h3>Hay <%= pluralize @project.errors.count, 'error' %>. Proyecto no creado </h3>
+<% end %>
+<% @project.errors.full_messages.each do |msg|  %>
+	<li><%= msg %></li>
+<% end %>
 
 <%= form_for @project do |f|%>
 	<%= f.label :nombre,'Nombre ticket' %>
