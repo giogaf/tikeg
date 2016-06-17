@@ -11,6 +11,9 @@ class ProjectsController < ApplicationController
   	@project = Project.new
   end
 
+  def edit
+
+  end
 
   def create  	
   	@project = Project.new(project_params)
@@ -23,7 +26,13 @@ class ProjectsController < ApplicationController
 	  end
   end
 
-  def update  	
+  def update
+    if @project.update(project_params)
+      flash[:notice] =  'Proyecto hasido editado'
+      redirect_to @project
+    else
+      render :edit
+    end  	
   end
 
   def destroy  	

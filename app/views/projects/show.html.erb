@@ -2,6 +2,7 @@
 
 <h2>Detalles producto</h2>
 
-<p><%= @project.nombre %></p>
+<h3><%= @project.nombre %></h3>
 <p><%= @project.descripcion %></p>
-<%= link_to 'Proyectos', projects_path%>
+<%= link_to 'Proyectos', projects_path%> <br>
+<%= link_to 'Editar proyecto', edit_project_path(@project) %>
