@@ -28,9 +28,10 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
-      flash[:notice] =  'Proyecto hasido editado'
+      flash[:notice] =  'Proyecto ha sido editado'
       redirect_to @project
     else
+      flash[:alert] = "Proyecto presenta datos inválidos"
       render :edit
     end  	
   end
