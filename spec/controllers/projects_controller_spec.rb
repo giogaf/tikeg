@@ -16,4 +16,12 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 
+  it "Manejo de proyecto no encontrado" do 
+    get :show,id:"not-here"
+
+    expect(response).to redirect_to projects_path
+
+    msg = "Proyecto no encontrado"
+    expect(flash[:alert]).to eq msg
+  end
 end

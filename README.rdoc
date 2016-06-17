@@ -11,3 +11,9 @@ making Ticketee clone
 5. gem factory_girls_rails  #define bouch default values for a object
 6 make dir spec/factories/proyecto_factory.rb
 
+7. create spec/features/editar_proyectos_spec.rb  #implementación siguiente requerimiento
+
+8. create spec/features/borrar_proyectos_spec.rb  #implementación siguiente requerimiento
+
+9. edit spec/controller/projects_controller_spec.rb  # manejo correcto proyectos no existentes
+
