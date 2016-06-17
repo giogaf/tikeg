@@ -6,3 +6,8 @@ making Ticketee clone
 2. new file  spec/features/creating_projects_spec.rb
 	  Edit: RSpec.feature "usuario crea nuevo proyecto" do ...
 3. console: rspec  # make test
+
+4. create spec/features/ver_proyectos_spec.rb  #implementación siguiente requerimiento
+5. gem factory_girls_rails  #define bouch default values for a object
+6 make dir spec/factories/proyecto_factory.rb
+

@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
 	#gema agregada para integration testing (click, visita paginas, llenar form)
 	gem "capybara", "~> 2.4"
+  gem "factory_girl_rails"
 end
 
 group :development, :test do

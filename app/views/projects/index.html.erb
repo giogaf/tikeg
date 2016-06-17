@@ -3,7 +3,7 @@
 <%= link_to 'Nuevo Proyecto',new_project_path %> <br>
 
 <% @projects.each do |p| %>
-<h3><%= p.nombre %></h3>
+<h3><%= link_to p.nombre , p%></h3>
 <%= p.descripcion %>
-<%= link_to 'ver',p %> <br>
+
 <% end %>
