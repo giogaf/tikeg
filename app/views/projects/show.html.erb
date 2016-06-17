@@ -5,4 +5,5 @@
 <h3><%= @project.nombre %></h3>
 <p><%= @project.descripcion %></p>
 <%= link_to 'Proyectos', projects_path%> <br>
-<%= link_to 'Editar proyecto', edit_project_path(@project) %>
+<%= link_to 'Editar proyecto', edit_project_path(@project) %> <br>
+<%= link_to 'Borrar proyecto', project_path(@project) , method: :delete, data: {confirm: "Confirmar eliminación?"}%>
