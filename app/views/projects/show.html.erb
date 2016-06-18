@@ -7,3 +7,4 @@
 <%= link_to 'Proyectos', projects_path%> <br>
 <%= link_to 'Editar proyecto', edit_project_path(@project) %> <br>
 <%= link_to 'Borrar proyecto', project_path(@project) , method: :delete, data: {confirm: "Confirmar eliminación?"}%>
+<%= link_to "Nuevo ticket", new_project_ticket_path(@project) %>
