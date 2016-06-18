@@ -17,3 +17,9 @@ making Ticketee clone
 
 9. edit spec/controller/projects_controller_spec.rb  # manejo correcto proyectos no existentes
 
+...
+...
+	create spec/features/xxxxxxxx_spec.rb  #implementación siguiente requerimiento
+
+
+

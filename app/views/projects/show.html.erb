@@ -1,9 +1,17 @@
 <% titulo @project.nombre  %>
 
-<h2>Detalles producto</h2>
-
+<h2>Detalles proyecto</h2>
 <h3><%= @project.nombre %></h3>
 <p><%= @project.descripcion %></p>
+<h3>**Tickets**</h3>
+<ul>
+<% @project.tickets.each do |ticket|%>
+	<li><%=  link_to ticket.nombre, [@project, ticket]%> </li>
+	<%= ticket.descripcion %>
+	<br>
+<% end %>
+</ul>
+
 <%= link_to 'Proyectos', projects_path%> <br>
 <%= link_to 'Editar proyecto', edit_project_path(@project) %> <br>
 <%= link_to 'Borrar proyecto', project_path(@project) , method: :delete, data: {confirm: "Confirmar eliminación?"}%>
