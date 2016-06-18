@@ -24,7 +24,16 @@ class TicketsController < ApplicationController
 
   def edit
   end
-
+  def update
+    
+    if @ticket.update params_ticket
+      flash[:notice] =  "Ticket Guardado"
+      redirect_to [@project,@ticket]
+    else
+      flash[:alert] = "Ticket no guardado"
+      render :edit
+    end
+  end
 private
   def set_project
   	@project = Project.find(params[:project_id])
