@@ -34,6 +34,12 @@ class TicketsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @ticket.destroy
+    flash[:notice] = "Ticket eliminado"
+    redirect_to @project
+  end
 private
   def set_project
   	@project = Project.find(params[:project_id])
