@@ -1,8 +1,9 @@
 require "rails_helper"
 RSpec.feature "Usuario elimina ticket" do 
-
+	let(:el_autor) {FactoryGirl.create(:user)}
 	let (:elproyecto) {FactoryGirl.create(:project, nombre: "proyecto con ticket para eliminar")}
-	let(:eltiquete) {FactoryGirl.create(:ticket,project: elproyecto)}
+
+	let(:eltiquete) {FactoryGirl.create(:ticket,project: elproyecto,autor:el_autor)}
 
 	before do 
 		visit project_ticket_path(elproyecto,eltiquete)

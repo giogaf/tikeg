@@ -1,7 +1,8 @@
 require "rails_helper"
 RSpec.feature "Usuario edita tickets" do
+	let(:usuario_autor) {FactoryGirl.create(:user)}
 	let(:proyecto) {FactoryGirl.create(:project)}
-	let(:tiquete) {FactoryGirl.create(:ticket,project: proyecto)}
+	let(:tiquete) {FactoryGirl.create(:ticket,project: proyecto,autor: usuario_autor)}	
 	
 	before do 
 		visit project_ticket_path(proyecto,tiquete)

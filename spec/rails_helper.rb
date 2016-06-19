@@ -55,7 +55,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # configuracion para usar login_as en spec/features/devise/salir_spec.rb
+  # configuracion para usar login_as en spec/features/devise/salir_spec.rb y crear_ticket_spec.rb
   config.include Warden::Test::Helpers, type: :feature
   config.after(type: :feature) { Warden.test_reset! }
 end

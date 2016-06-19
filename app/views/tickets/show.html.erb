@@ -6,6 +6,9 @@
 	<p>
 		<%= @ticket.descripcion %>
 	</p>
+
+	<p>Autor: <%= @ticket.autor.email  %></p>
+	
 </div>
 <%= link_to "Editar ticket", edit_project_ticket_path(@project,@ticket)%>
 <%= link_to "Borrar ticket", [ @project, @ticket] , method: :delete, data: {confirm: "Confirma eliminar?"} %>
