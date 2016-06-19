@@ -22,4 +22,13 @@ making Ticketee clone
 	create spec/features/xxxxxxxx_spec.rb  #implementación siguiente requerimiento
 
 
+*** Authentication***
+
+1. gem "devise"
+		rails g devese:install
+		rails g devise user
+		rake db:migrate
+2. SERVER RESET
+
+
 
