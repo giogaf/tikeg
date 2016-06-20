@@ -2,6 +2,7 @@ require "rails_helper"
 
 RSpec.feature "Usuario crea nuevo proyecto" do 
 	before do
+		login_as(FactoryGirl.create(:user,:administrador))
 		visit '/'
 		click_link 'Nuevo Proyecto'		
 	end

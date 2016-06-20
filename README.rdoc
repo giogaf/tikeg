@@ -30,5 +30,8 @@ making Ticketee clone
 		rake db:migrate
 2. SERVER RESET
 
+*** Authorization ***
+
+1. rails g migration add_admin_to_users admin:boolean
 
 
