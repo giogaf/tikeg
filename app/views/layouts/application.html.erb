@@ -19,6 +19,9 @@
   <% else %>
   Signed in as <%= current_user.email %>
   <%= link_to 'Salir', destroy_user_session_path, method: :delete%>
+<% end %> <br>
+<% solo_administrador do %>
+  <%= link_to 'Administrar', admin_root_path %>
 <% end %>
 <h3>
 <%= notice %>
