@@ -1,6 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Vista de links" do
+	let(:proyecto) {FactoryGirl.create(:project)}
 	let(:usuario) {FactoryGirl.create(:user)}
 	let(:administrador) {FactoryGirl.create(:user,:administrador)}
 
@@ -9,6 +10,10 @@ RSpec.feature "Vista de links" do
 			visit "/"
 			expect(page).not_to have_link "Nuevo Proyecto"
 		end
+		scenario ' link "Borrar proyecto" no visible' do
+			visit project_path(proyecto)
+			expect(page).not_to have_link "Borrar proyecto"
+		end
 	end
 	context 'como usuario normal'do
 	before {login_as(usuario)}
@@ -16,6 +21,10 @@ RSpec.feature "Vista de links" do
 			visit '/'
 			expect(page).not_to have_link "Nuevo Proyecto"
 		end	
+		scenario ' link "Borrar proyecto" no visible' do
+			visit project_path(proyecto)
+			expect(page).not_to have_link "Borrar proyecto"
+		end		
 	end
 
 	context 'como  admnistrador' do
@@ -24,5 +33,9 @@ RSpec.feature "Vista de links" do
 			visit '/'
 			expect(page).to have_link "Nuevo Proyecto"
 		end
+		scenario ' link "Borrar proyecto" visible' do
+			visit project_path(proyecto)
+			expect(page).to have_link "Borrar proyecto"
+		end		
 	end
 end
