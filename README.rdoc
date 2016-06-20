@@ -34,4 +34,10 @@ making Ticketee clone
 
 1. rails g migration add_admin_to_users admin:boolean
 
+***  Namespace admin ***
 
+1. rails g controller admin/escritorio index
+2. change routes.rb
+		  namespace :admin do
+  			root "escritorio#index"		#get 'escritorio/index' URL: /admin
+  		end
