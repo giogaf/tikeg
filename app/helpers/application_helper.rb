@@ -6,4 +6,7 @@ module ApplicationHelper
 			end
 		end
 	end
+	def solo_administrador(&block)
+		block.call if  current_user.try(:admin?)
+	end
 end
