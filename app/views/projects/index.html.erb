@@ -1,6 +1,6 @@
 <h1>Lista proyectos</h1>
 
-<%= link_to 'Nuevo Proyecto',new_project_path %> <br>
+<%= link_to 'Nuevo Proyecto',new_admin_project_path %> <br>
 
 <% @projects.each do |p| %>
 <h3><%= link_to p.nombre , p%></h3>

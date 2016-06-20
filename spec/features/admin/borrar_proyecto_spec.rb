@@ -1,5 +1,10 @@
 require "rails_helper"
 RSpec.feature "Usuario borra proyecto" do
+
+	before do 
+		login_as(FactoryGirl.create(:user,:administrador))
+	end
+
 	scenario "exitosamente" do
 
 		FactoryGirl.create(:project, nombre: 'proyecto eliminame')
