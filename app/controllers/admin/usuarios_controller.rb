@@ -31,7 +31,7 @@ class Admin::UsuariosController < Admin::EscritorioController#ApplicationControl
   end
 
   def params_user
-  	params.require(:user).permit(:email,:password)
+  	params.require(:user).permit(:email,:password,:admin)
   end
 
 end
