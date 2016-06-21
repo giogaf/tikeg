@@ -3,10 +3,8 @@
 <%= link_to "Nuevo usuario", new_admin_usuario_path %>
 	<ul>
 		<% @users.each do |u| %>
-		<p>
 			<li><%= link_to u.email,admin_usuario_path(u) %></li>	
-		</p>
+		<% end %>
 	</ul>
-<% end %>
 
 
