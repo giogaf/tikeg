@@ -1,5 +1,7 @@
 
-<%= form_for @user ,url: admin_usuarios_path, method: :post do  |f|%>
+<%= form_for @user , url: @user.id ? admin_usuario_path : admin_usuarios_path , 
+		method: @user.id ? :patch : :post do  |f|%>
+
 	<%= f.label :email %>
 	<%= f.text_field :email %> <br>
 	<%= f.label :password %>

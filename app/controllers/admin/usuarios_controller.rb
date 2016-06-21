@@ -1,16 +1,38 @@
 class Admin::UsuariosController < Admin::EscritorioController#ApplicationController
     before_action :set_user,only: [:show,:edit,:update,:destroy]
-    before_action :params
+    
   def index
   	@users =  User.order(:email)
   end
 
   def new
   	@user = User.new
+    logger.debug "N*******************************"
+    logger.debug  p @user.email
   end
 
   def show
   	
+  end
+
+  def edit
+    logger.debug "E*******************************"
+    logger.debug p @user.email
+  end
+
+  def update
+
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+    end
+
+    if @user.update(params_user)
+      flash[:notice] = "User has been updated."
+      redirect_to admin_usuarios_path
+    else
+      flash[:alert] = "User has not been updated."
+      render :edit
+    end
   end
 
   def create
