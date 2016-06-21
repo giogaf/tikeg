@@ -12,4 +12,13 @@ class User < ActiveRecord::Base
   def deshabilitar
   	self.update(deshabilitado: Time.now)
   end
+
+  def active_for_authentication?
+    super && deshabilitado.nil?
+  end
+
+  def inactive_message
+    deshabilitado.nil? ? super: :deshabilitado
+  end
+
 end
