@@ -2,9 +2,14 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
-  root "escritorio#index"#get 'escritorio/index'
-  resources :projects,only: [:new,:create, :destroy]
-  resources :usuarios
+    root "escritorio#index"#get 'escritorio/index'
+    resources :projects,only: [:new,:create, :destroy]
+
+    resources :usuarios do
+      member do
+        patch  :deshabilitar 
+      end
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

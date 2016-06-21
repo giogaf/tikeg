@@ -1,8 +1,20 @@
 class Admin::UsuariosController < Admin::EscritorioController#ApplicationController
-    before_action :set_user,only: [:show,:edit,:update,:destroy]
+    before_action :set_user,only: [:show,:edit,:update,:deshabilitar]
+
+  def deshabilitar
+    
+    if @user  == current_user
+      flash[:alert] = "Esta cuenta de administrador no puede eliminarse"
+    else 
+    @user.deshabilitar
+    flash[:notice] = "Usuario deshabilitado"      
+    end
+
+    redirect_to admin_usuarios_path
+  end
     
   def index
-  	@users =  User.order(:email)
+  	@users = User.excluir_deshabilitado.order(:email)#@users =  User.order(:email)
   end
 
   def new

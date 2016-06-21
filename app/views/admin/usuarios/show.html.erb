@@ -1,3 +1,5 @@
 <h2>Detalles usuario <%= @user.email %></h2>
 
 <%= link_to "Editar usuario", edit_admin_usuario_path(@user) %>
+<%= link_to "Deshabilitar Usuario", deshabilitar_admin_usuario_path, 
+						method: :patch, data: {confirm: "Confirma deshabilitar usuario"} %>		
