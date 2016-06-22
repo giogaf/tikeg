@@ -1,7 +1,14 @@
 require "rails_helper"
 RSpec.feature "Usuario puede editar proyecto" do
+
+	let(:el_proyecto) {FactoryGirl.create(:project,nombre:"proyecto editame")}
+	let(:el_usuario) {FactoryGirl.create(:user)}
+
 	before do 
-		FactoryGirl.create(:project, nombre: "proyecto editame")
+		#FactoryGirl.create(:project, nombre: "proyecto editame")
+
+		login_as(el_usuario)
+		asignar_rol!(el_usuario,:lector,el_proyecto)
 
 		visit "/"
 		click_link "proyecto editame"

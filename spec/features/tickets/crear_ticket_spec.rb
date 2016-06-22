@@ -6,6 +6,7 @@ RSpec.feature "Usuario crea nuevos tickets" do
 	before do 
 		login_as(el_usuario)
 		proyecto = FactoryGirl.create(:project,nombre: 	"proyecto dameticket")
+		asignar_rol!(el_usuario,:lector,proyecto)
 		visit project_path(proyecto)
 		click_link "Nuevo ticket"
 	end

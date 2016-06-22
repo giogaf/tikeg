@@ -5,18 +5,23 @@ RSpec.feature "Vista de links" do
 	let(:usuario) {FactoryGirl.create(:user)}
 	let(:administrador) {FactoryGirl.create(:user,:administrador)}
 
-	context 'como usuario anónimo' do
-		scenario ' link "Nuevo Project" no visible' do
-			visit "/"
-			expect(page).not_to have_link "Nuevo Proyecto"
+	#context 'como usuario anónimo' do
+	#	scenario ' link "Nuevo Project" no visible' do
+	#		visit "/"
+	#		expect(page).not_to have_link "Nuevo Proyecto"
+	#	end
+	#	scenario ' link "Borrar proyecto" no visible' do
+	#		visit project_path(proyecto)
+	#		expect(page).not_to have_link "Borrar proyecto"
+	#	end
+	#end
+	context 'como usuario normal' do
+		
+		before do
+			login_as(usuario)
+			asignar_rol!(usuario,:lector,proyecto)		
 		end
-		scenario ' link "Borrar proyecto" no visible' do
-			visit project_path(proyecto)
-			expect(page).not_to have_link "Borrar proyecto"
-		end
-	end
-	context 'como usuario normal'do
-	before {login_as(usuario)}
+
 		scenario ' link "Nuevo Project" no visible' do
 			visit '/'
 			expect(page).not_to have_link "Nuevo Proyecto"

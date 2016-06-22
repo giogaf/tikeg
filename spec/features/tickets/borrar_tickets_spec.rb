@@ -6,6 +6,8 @@ RSpec.feature "Usuario elimina ticket" do
 	let(:eltiquete) {FactoryGirl.create(:ticket,project: elproyecto,autor:el_autor)}
 
 	before do 
+		login_as(el_autor)
+		asignar_rol!(el_autor,:lector,elproyecto)
 		visit project_ticket_path(elproyecto,eltiquete)
 	end
 

@@ -4,6 +4,9 @@ RSpec.feature "usuario ve tickets" do
 		before do 
 			un_autor = FactoryGirl.create(:user)
 			proyecto = FactoryGirl.create(:project,nombre: "projecto ver ticket")
+
+			asignar_rol!(un_autor,:lector,proyecto)
+
 			FactoryGirl.create(:ticket, project: proyecto,
 				autor: un_autor,
 				nombre: "nombre del ticket",
@@ -14,6 +17,10 @@ RSpec.feature "usuario ve tickets" do
 				autor: un_autor,
 				nombre: "otro nombre",
 				descripcion: 'una descripcion')
+
+			asignar_rol!(un_autor,:lector,otroproyecto)
+
+			login_as(un_autor)
 			visit '/'
 		end
 
