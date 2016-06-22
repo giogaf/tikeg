@@ -20,7 +20,8 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -58,4 +59,8 @@ RSpec.configure do |config|
   # configuracion para usar login_as en spec/features/devise/salir_spec.rb y crear_ticket_spec.rb
   config.include Warden::Test::Helpers, type: :feature
   config.after(type: :feature) { Warden.test_reset! }
+
+
+  # Add additional requires below this line. Rails is not loaded until this point!
+require "pundit/rspec"
 end

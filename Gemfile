@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# conjunto de Helpers para sistema de autorización escalable
+gem "pundit"
 
 gem "devise"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
